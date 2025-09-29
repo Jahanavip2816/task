@@ -55,12 +55,14 @@ public class Customer
 
     public virtual void Display()
     {
+        Console.WriteLine("-------------------------------------------------------------------------------------------");
         Console.WriteLine(
             $"ID:{Id} | Name:{Name} | Code:{Code} | Address:{Address}\n" +
             $"Product:{Product} | Category:{Category} | " +
             $"Order Placed:{OrderDate.ToShortDateString()} | Received:{ReceivedDate.ToShortDateString()}" +
             $"{(IsPremium ? " | Premium Customer" : "")}"
         );
+        Console.WriteLine("-------------------------------------------------------------------------------------------");
     }
 }
 
@@ -86,7 +88,6 @@ public abstract class CustomerManager
 {
     protected Customer[] customers = new Customer[500];
     protected int count = 0;
-
     public abstract void Add(Customer c);
     public abstract void ViewAll();
     public abstract void Search();
